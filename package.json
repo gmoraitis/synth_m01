@@ -4,8 +4,11 @@
   "description": "A simple synthesizer with tonejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server -p 8080 -c-1"
   },
   "author": "George Moraitis",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
