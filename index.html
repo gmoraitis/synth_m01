@@ -44,17 +44,35 @@
             <div class="section" id="mixer">
                 <h2>Mixer</h2>
                 <div class="controls">
-                    <label>Digital Synth 1 Volume
+                    <label>OSC 1 Volume
                         <input type="range" id="volume1" min="0" max="100" value="50">
                     </label>
-                    <label>Digital Synth 2 Volume
+                    <label>OSC 2 Volume
                         <input type="range" id="volume2" min="0" max="100" value="50">
                     </label>
                 </div>
             </div>
 
+            <div class="section">
+                <div id="keyboard" class="keyboard-keys" style="display: none;">
+                    <div class="key white" data-note="C4"></div>
+                    <div class="key black" data-note="C#4"></div>
+                    <div class="key white" data-note="D4"></div>
+                    <div class="key black" data-note="D#4"></div>
+                    <div class="key white" data-note="E4"></div>
+                    <div class="key white" data-note="F4"></div>
+                    <div class="key black" data-note="F#4"></div>
+                    <div class="key white" data-note="G4"></div>
+                    <div class="key black" data-note="G#4"></div>
+                    <div class="key white" data-note="A4"></div>
+                    <div class="key black" data-note="A#4"></div>
+                    <div class="key white" data-note="B4"></div>
+                    <div class="key white" data-note="C5"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <button id="play">Play</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.30/Tone.min.js"></script>
     <script src="script.js"></script>
 </body>
