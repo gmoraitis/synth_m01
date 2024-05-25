@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Synthesizer Project - Part 1</title>
 </head>
 <body>
-    
-    <script src="script.js" ></script>
+    <h1>Synthesizer Project - Part 1</h1>
+    <div class="synth-panel">
+        <div class="section" id="digital-synth1">
+            <h2>Digital Synth 1</h2>
+            <div class="controls">
+                <label>Waveform
+                    <select id="waveform1">
+                        <option value="sine">Sine</option>
+                        <option value="square">Square</option>
+                        <option value="sawtooth">Sawtooth</option>
+                        <option value="triangle">Triangle</option>
+                    </select>
+                </label>
+                <label>Octave
+                    <input type="range" id="octave1" min="-2" max="2" value="0">
+                </label>
+            </div>
+        </div>
+    </div>
+    <button id="play">Play</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.30/Tone.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
