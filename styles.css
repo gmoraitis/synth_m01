@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-container {
+    text-align: center;
+}
+
+#app-container {
+    text-align: center;
+}
+
+#start-button, 
+#stop-button {
+    padding: 20px;
+    font-size: 20px;
+    background-color: #777;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#start-button:hover,
+#stop-button:hover {
+    background-color: #999;
+}
+
+.synth-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #555;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #777;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #999;
+}
+
+.keyboard-keys {
+    display: flex;
+    justify-content: center;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 150px; /* Increase the height for a piano-like appearance */
+    background-color: #ccc; /* Lighter color for white keys */
+    border: 1px solid #aaa; /* Add border for separation */
+    color: #000; /* Black color for text */
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 0 0 5px px; /* Slightly round the bottom corners */
+}
+
+.black {
+    position: relative;
+    background-color: #000; /* Black color for black keys */
+    width: 30px; /* Reduced width for black keys */
+    height: 100px; /* Reduced height for black keys */
+    margin: 0 -15px; /* Negative margin to overlap with adjacent white keys */
+    border-radius: 5px 5px 0 0; /* Slightly round the top corners */
+    z-index: 1; /* Ensure black keys are above white keys */
+}
+
+.white {
+    z-index: 0; /* Set white keys behind black keys */
+}
+
+.key:hover {
+    background-color: #bbb; /* Lighter color on hover */
+}
+
+.center-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+#adsr-morph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #555;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#adsr-morph label {
+    margin: 5px 0;
+}
+
+#adsr-morph input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+}

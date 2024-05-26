@@ -3,69 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synthesizer Project</title>
+    <title>Roland JD-Xi Emulator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Synthesizer Project</h1>
-    <div class="synth-panel">
-        <div class="section" id="digital-synth1">
-            <h2>Oscillator 1</h2>
-            <div class="controls">
-                <label>Waveform
-                    <select id="waveform1">
-                        <option value="sine">Sine</option>
-                        <option value="square">Square</option>
-                        <option value="sawtooth">Sawtooth</option>
-                        <option value="triangle">Triangle</option>
-                    </select>
-                </label>
-                <label>Octave
-                    <input type="range" id="octave1" min="-2" max="2" value="0">
-                </label>
-                <label>Reverb
-                    <input type="range" id="reverb1" min="0" max="1" step="0.01" value="0">
-                </label>
-                <label>Delay
-                    <input type="range" id="delay1" min="0" max="1" step="0.01" value="0">
-                </label>
-            </div>
-        </div>
+    <button id="start-button">Switch ON</button>
 
-        <div class="section" id="digital-synth2">
-            <h2>Oscillator 2</h2>
-            <div class="controls">
-                <label>Waveform
-                    <select id="waveform2">
-                        <option value="sine">Sine</option>
-                        <option value="square">Square</option>
-                        <option value="sawtooth">Sawtooth</option>
-                        <option value="triangle">Triangle</option>
-                    </select>
-                </label>
-                <label>Octave
-                    <input type="range" id="octave2" min="-2" max="2" value="0">
-                </label>
-                <label>Reverb
-                    <input type="range" id="reverb2" min="0" max="1" step="0.01" value="0">
-                </label>
-                <label>Delay
-                    <input type="range" id="delay2" min="0" max="1" step="0.01" value="0">
-                </label>
+    <div id="app-container" class="hidden">
+        <h1>Synth M01</h1>
+        
+        <div class="synth-panel">
+            <div class="section" id="digital-synth1">
+                <h2>Synth 1</h2>
+                <div class="controls">
+                    <label>Waveform
+                        <select id="waveform1">
+                            <option value="sine">Sine</option>
+                            <option value="square">Square</option>
+                            <option value="sawtooth">Sawtooth</option>
+                            <option value="triangle">Triangle</option>
+                        </select>
+                    </label>
+                    <label>Octave
+                        <input type="range" id="octave1" min="-2" max="2" value="0">
+                    </label>
+                </div>
+            </div>
+
+            <div class="section" id="digital-synth2">
+                <h2>Synth 2</h2>
+                <div class="controls">
+                    <label>Waveform
+                        <select id="waveform2">
+                            <option value="sine">Sine</option>
+                            <option value="square">Square</option>
+                            <option value="sawtooth">Sawtooth</option>
+                            <option value="triangle">Triangle</option>
+                        </select>
+                    </label>
+                    <label>Octave
+                        <input type="range" id="octave2" min="-2" max="2" value="0">
+                    </label>
+                </div>
+            </div>
+
+            <div class="section" id="filter-controls">
+                <h2>Filter</h2>
+                <div class="controls">
+                    <label>Filter Type
+                        <select id="filter-type">
+                            <option value="lowpass">Lowpass</option>
+                            <option value="highpass">Highpass</option>
+                            <option value="bandpass">Bandpass</option>
+                        </select>
+                    </label>
+                    <label>Frequency
+                        <input type="range" id="filter-frequency" min="0" max="10000" value="2000">
+                    </label>
+                    <label>Q
+                        <input type="range" id="filter-q" min="0" max="10" value="1">
+                    </label>
+                </div>
             </div>
 
             <div class="section" id="mixer">
                 <h2>Mixer</h2>
                 <div class="controls">
-                    <label>OSC 1 Volume
-                        <input type="range" id="volume1" min="0" max="100" value="50">
+                    <label>Synth 1 Volume
+                        <input type="range" id="volume1" min="0" max="100" value="10">
                     </label>
-                    <label>OSC 2 Volume
-                        <input type="range" id="volume2" min="0" max="100" value="50">
+                    <label>Synth 2 Volume
+                        <input type="range" id="volume2" min="0" max="100" value="10">
+                    </label>
+                    <div id="adsr-morph">
+                      <h3>AMP Envelope Morph</h3>
+                      <label for="adsrMorph"> Short <-- // --> Long</label>
+                      <input type="range" id="adsrMorph" min="0.02" max="0.9" step="0.01" value="0.02">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="effects">
+                <h2>Effects</h2>
+                <div class="controls">
+                    <label>Reverb
+                        <input type="range" id="reverb" min="0" max="1" step="0.01" value="0">
+                    </label>
+                    <label>Delay
+                        <input type="range" id="delay" min="0" max="1" step="0.01" value="0">
+                    </label>
+                    <label>Chorus
+                        <input type="range" id="chorus" min="0" max="1" step="0.01" value="0">
+                    </label>
+                    <label>Distortion
+                        <input type="range" id="distortion" min="0" max="1" step="0.01" value="0">
                     </label>
                 </div>
             </div>
 
             <div class="section">
+                <button id="toggle-keyboard">Toggle Keyboard</button>
                 <div id="keyboard" class="keyboard-keys" style="display: none;">
                     <div class="key white" data-note="C4"></div>
                     <div class="key black" data-note="C#4"></div>
@@ -84,7 +121,12 @@
             </div>
         </div>
 
+        <footer>
+            <p class="center-items">Created by <a href="https://gmoraitis.github.io/">George Moraitis</a></p>
+            <button id="stop-button">Switch OFF</button>
+        </footer>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.30/Tone.min.js"></script>
     <script src="script.js"></script>
 </body>
