@@ -1,60 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: futura, Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #333;
+    background-color: #000;
     color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 .hidden {
     display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#start-container {
-    text-align: center;
 }
 
 #app-container {
     text-align: center;
+    width: 100%;    
+    max-width: 100%;
+    height: 100%;
+    font-family: futura;
 }
 
 #start-button, 
 #stop-button {
     padding: 20px;
     font-size: 20px;
-    background-color: #777;
+    background-color: #e60012;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 200px;
+    margin: 0 auto;
+    font-family: futura;
+
 }
 
 #start-button:hover,
 #stop-button:hover {
-    background-color: #999;
+    background-color: #ff1c2e;
 }
 
 .synth-panel {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 80%;
-    background-color: #444;
+    width: 100%;
+    background-color: #111;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: futura;
 }
 
 .section {
     margin: 20px;
     padding: 20px;
-    background-color: #555;
+    background-color: #222;
     border-radius: 10px;
-    width: 200px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .controls {
@@ -64,70 +75,81 @@ body {
 
 label {
     margin-bottom: 10px;
+    color: #e60012;
+}
+
+select, input[type="range"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #444;
+    color: #fff;
 }
 
 button {
     margin: 5px 0;
     padding: 10px;
-    background-color: #777;
+    background-color: #e60012;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: futura;
 }
 
 button:hover {
-    background-color: #999;
+    background-color: #ff1c2e;
 }
 
 .keyboard-keys {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .key {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 150px; /* Increase the height for a piano-like appearance */
-    background-color: #ccc; /* Lighter color for white keys */
-    border: 1px solid #aaa; /* Add border for separation */
-    color: #000; /* Black color for text */
+    width: 40px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    color: #000;
     cursor: pointer;
-    margin: 0 5px;
-    border-radius: 0 0 5px px; /* Slightly round the bottom corners */
-}
-
-.black {
-    position: relative;
-    background-color: #000; /* Black color for black keys */
-    width: 30px; /* Reduced width for black keys */
-    height: 100px; /* Reduced height for black keys */
-    margin: 0 -15px; /* Negative margin to overlap with adjacent white keys */
-    border-radius: 5px 5px 0 0; /* Slightly round the top corners */
-    z-index: 1; /* Ensure black keys are above white keys */
-}
-
-.white {
-    z-index: 0; /* Set white keys behind black keys */
+    margin: 0 2px;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease;
 }
 
 .key:hover {
-    background-color: #bbb; /* Lighter color on hover */
+    background-color: #ddd;
 }
 
-.center-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}   
+.black {
+    background-color: #000;
+    width: 30px;
+    height: 100px;
+    margin: 0 -15px;
+    border-radius: 5px 5px 0 0;
+    z-index: 1;
+}
 
+.white {
+    z-index: 0;
+}
+
+.black:hover {
+    background-color: #333;
+}
 #adsr-morph {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #555;
+    background-color: #333;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
@@ -135,9 +157,32 @@ button:hover {
 
 #adsr-morph label {
     margin: 5px 0;
+    color: #e60012;
 }
 
 #adsr-morph input[type="range"] {
     width: 100%;
     margin: 5px 0;
+    background-color: #444;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #e60012;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff1c2e;
 }

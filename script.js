@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.getElementById("start-button");
   const stopButton = document.getElementById("stop-button");
@@ -63,7 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log(synth.envelope.attack, synth.envelope.decay, synth.envelope.sustain, synth.envelope.release);
 
+    // make synth note play for ever as you hold down the key and not repeat
     synth.triggerAttack(note);
+
+
   }
 
   function stopSound(synth) {
@@ -189,3 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+
