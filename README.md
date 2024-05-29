@@ -10,29 +10,27 @@ Use the on-screen keyboard or your computer keyboard to play notes. The keys cor
 ## Adjust Controls: 
 Use the various sliders and dropdowns to adjust the ADSR envelope, filter parameters, waveform type, and effects settings.
 
-# Stop the Synthesizer: 
-Click the "Stop" button to stop all sounds and reset the synthesizer.
 
-## Controls
-# Keyboard:
+# Controls
+## Keyboard:
 Use the on-screen keys with your mouse, or computer keyboard to play notes.
 
-# ADSR Envelope:
+## ADSR Envelope:
 Adjust the attack, decay, sustain, and release times using the ADSR Morph slider.
 
-# Filters:
+## Filters:
 Modify the filter frequency, type, and Q value using the respective controls.
 
-# Effects:
+## Effects:
 Adjust the wet/dry mix of reverb, delay, chorus, and distortion effects using the sliders.
 
-# Waveform:
+## Waveform:
 Select the waveform type (sine, square, triangle, sawtooth) for each synthesizer's oscillator.
 
-# Volume:
+## Volume:
 Control the volume of each synthesizer independently.
 
-# Keyboard Shortcuts
+## Keyboard Shortcuts
 'A': C4
 'W': C#4
 'S': D4
@@ -50,4 +48,5 @@ Control the volume of each synthesizer independently.
 
 ## Acknowledgements
 
-Tone.js - The Web Audio framework used in this project.
+The Web Audio framework used in this project.
+[Tone.js](https://tonejs.github.io/)
