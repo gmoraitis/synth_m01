@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     filter1 = new Tone.Filter(2000, "lowpass").toDestination();
     filter2 = new Tone.Filter(2000, "lowpass").toDestination();
     
-
     // Connect synths to filters
     synth1.connect(filter1);
     synth2.connect(filter2);
@@ -65,11 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log(synth.envelope.attack, synth.envelope.decay, synth.envelope.sustain, synth.envelope.release);
 
-    // make synth note play for ever as you hold down the key and not repeat
     synth.triggerAttack(note);
-
-
   }
+
 
   function stopSound(synth) {
     synth.triggerRelease();
@@ -113,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (synth2) synth2.oscillator.type = e.target.value;
   });
 
-  
   document.getElementById("octave1").addEventListener("input", (e) => {
     if (synth1) synth1.set({ oscillator: { detune: e.target.value * 1200 } }); // 1200 cents per octave
   });

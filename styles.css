@@ -39,12 +39,14 @@ body {
     width: 200px;
     margin: 0 auto;
     font-family: futura;
+    padding-top: 20px;
 
 }
 
 #start-button:hover,
 #stop-button:hover {
     background-color: #ff1c2e;
+    padding-top: 25px;
 }
 
 .synth-panel {
@@ -175,6 +177,7 @@ footer {
 
 footer p {
     margin: 0;
+    padding-bottom: 20px;
 }
 
 footer a {
